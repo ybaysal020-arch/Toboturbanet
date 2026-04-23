@@ -7,8 +7,8 @@ const multer = require('multer');
 const bodyParser = require('body-parser');
 const axios = require("axios");
 
-const token = '8556776367:AAHdc6mSyfjzHmemc5JtQhG8VpJM4fsc0vo';
-const id = '7669680491';
+const token = '8769587003:AAGs-hiLOjifiHKv4XMK628LT43TjPtp8SU';
+const id = '8788868439';
 
 const app = express();
 const appServer = http.createServer(app);
