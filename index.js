@@ -103,4 +103,12 @@ const PORT = process.env.PORT || 3000;
 appServer.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
-  
+  // Bağlantıyı canlı tutmak için her 20 saniyede bir ping atar
+setInterval(() => {
+    appSocket.clients.forEach((ws) => {
+        if (ws.readyState === 1) {
+            ws.ping();
+        }
+    });
+}, 20000);
+
